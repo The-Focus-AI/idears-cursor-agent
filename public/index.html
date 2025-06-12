@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Idea Collector</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💡 Idea Collector</h1>
+            <p class="subtitle">Share your ideas and vote for the best ones</p>
+        </header>
+
+        <main>
+            <!-- New Idea Form -->
+            <section class="new-idea-section">
+                <h2>Submit a New Idea</h2>
+                <form id="new-idea-form" class="idea-form">
+                    <input 
+                        type="text" 
+                        id="idea-title" 
+                        placeholder="What's your idea?" 
+                        required
+                        maxlength="200"
+                    >
+                    <textarea 
+                        id="idea-description" 
+                        placeholder="Add more details (optional)"
+                        rows="3"
+                        maxlength="1000"
+                    ></textarea>
+                    <button type="submit" class="btn btn-primary">
+                        <span class="btn-text">Submit Idea</span>
+                        <span class="btn-loader" style="display: none;">Submitting...</span>
+                    </button>
+                </form>
+            </section>
+
+            <!-- Ideas List -->
+            <section class="ideas-section">
+                <h2>All Ideas</h2>
+                <div id="ideas-list" class="ideas-list">
+                    <!-- Ideas will be dynamically loaded here -->
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Idea Details Modal -->
+    <div id="idea-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body">
+                <!-- Modal content will be dynamically loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

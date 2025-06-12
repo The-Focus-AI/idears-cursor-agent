@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  idea-collector:
+    build: .
+    container_name: idea-collector-app
+    ports:
+      - "3000:3000"
+    volumes:
+      - idea-data:/app/data
+    environment:
+      - NODE_ENV=production
+      - DATA_DIR=/app/data
+    restart: unless-stopped
+
+volumes:
+  idea-data:
+    driver: local
